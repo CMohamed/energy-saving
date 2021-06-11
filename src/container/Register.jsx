@@ -1,17 +1,17 @@
 import {
     Box,
     Button,
+    Checkbox,
     Container,
     Grid,
     Link,
     TextField,
     Typography
 } from '@material-ui/core';
-import Facebook from '../icons/Facebook';
-import Google from '../icons/Google';
 
 
-const Header = () => {
+
+const Register = () => {
     const onClick = () => {
         console.log('click')
     }
@@ -22,40 +22,27 @@ const Header = () => {
                 <form className='container'>
                     <Box className='css-1gm9hch'>
                         <Typography className='MuiTypography-root MuiTypography-h2 css-zoocp0-MuiTypography-root'>
-                            Sign in
+                            Create new account
                         </Typography>
                         <Typography className='MuiTypography-root MuiTypography-body2 MuiTypography-gutterBottom css-13dgf1y-MuiTypography-root'>
-                            Sign in on the internal platform
+                            Use your email to create new account
                         </Typography>
                     </Box>
-                    <Grid
-                        className='MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3 css-h51dfx-MuiGrid-root'>
-                        <Grid className='MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6 css-13liyab-MuiGrid-root'>
-                            <Button
-                                variant="contained"
-                                color="primary"
-                                onClick={onClick}
-                                startIcon={<Facebook />}
-                                className='MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-fullWidth MuiButtonBase-root css-1h67mkt-MuiButtonBase-root-MuiButton-root'
-                            >
-                                Login with Facebook</Button>
-                        </Grid>
-                        <Grid className='MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6 css-13liyab-MuiGrid-root'>
-                            <Button
-                                variant="contained"
-                                color="primary"
-                                onClick={onClick}
-                                startIcon={<Google />}
-                                className='MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-fullWidth MuiButtonBase-root css-1h67mkt-MuiButtonBase-root-MuiButton-root'
-                            >
-                                Login with google
-                            </Button>
-                        </Grid>
-                    </Grid>
-                    <Box className='css-1wqng4v'>
-                        <Typography className='MuiTypography-root MuiTypography-body1 MuiTypography-alignCenter css-17el6lh-MuiTypography-root'>or login with email address</Typography>
-
-                    </Box>
+                    <TextField
+                        className='MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-17vbkzs-MuiFormControl-root-MuiTextField-root'
+                        label="First name"
+                        margin="normal"
+                        name="First name"
+                        type="text"
+                        variant="outlined"
+                    />
+                    <TextField
+                        className='MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-17vbkzs-MuiFormControl-root-MuiTextField-root'
+                        label="Last name"
+                        margin="normal"
+                        name="Last name"
+                        variant="outlined"
+                    />
                     <TextField
                         className='MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-17vbkzs-MuiFormControl-root-MuiTextField-root'
                         label="Email Address"
@@ -71,6 +58,25 @@ const Header = () => {
                         name="password"
                         variant="outlined"
                     />
+                    <Box className='css-l28hz2'>
+
+                        <Checkbox
+                            name="policy"
+                        />
+                        <Typography className='MuiTypography-root MuiTypography-body1 css-ngt9wa-MuiTypography-root'>
+                            I have read the
+                            {' '}
+                            <Link
+                                className='MuiTypography-root MuiTypography-h6 MuiLink-root MuiLink-underlineAlways css-1eheey-MuiTypography-root-MuiLink-root'
+                                color="primary"
+                                to="#"
+                                underline="always"
+                                variant="h6"
+                            >
+                                Terms and Conditions
+                            </Link>
+                        </Typography>
+                    </Box>
                     <Grid className='css-3n9w57'>
                         <Button
                             className='MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-fullWidth MuiButtonBase-root css-1h67mkt-MuiButtonBase-root-MuiButton-root'
@@ -78,18 +84,18 @@ const Header = () => {
                             color="primary"
                             onClick={onClick}
                         >
-                            Sign in now
+                            Sign up now
                         </Button>
                     </Grid>
 
                     <Typography className='MuiTypography-root MuiTypography-body1 css-ngt9wa-MuiTypography-root'>
-                        Don't have an account?
+                        Have an account?
+                        {' '}
                         <Link
                             className='MuiTypography-root MuiTypography-h6 MuiLink-root MuiLink-underlineHover css-1lwfupp-MuiTypography-root-MuiLink-root'
-                            href='/register'
+                            href='/login'
                         >
-                            {' '}
-                            Sign up
+                            Sign in
                         </Link>
                     </Typography>
                 </form>
@@ -99,12 +105,12 @@ const Header = () => {
 
     )
 }
-Header.defaultProps = {
-    title: 'Login'
+Register.defaultProps = {
+    title: 'Register'
 }
 // CSS in JS
 // const headingStyle={
 //     color:'red', backgroundColor:'black'
 // }
 
-export default Header
+export default Register

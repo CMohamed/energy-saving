@@ -1,12 +1,12 @@
 import React from 'react';
-import Header from './container/Header'
+import Register from './container/Register'
 
 import './App.css';
 
 function App() {
   return (
     <div>
-      <Header  />
+      <Register />
     </div>
   );
 }
