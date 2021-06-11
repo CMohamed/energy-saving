@@ -1,11 +1,17 @@
 import React from 'react';
+import { useRoutes } from 'react-router-dom';
 import './App.css';
+import routes from './routes';
+import theme from './theme';
+import { ThemeProvider } from '@material-ui/core';
 
-function App() {
+const App = () => {
+  const routing = useRoutes(routes);
+
   return (
-    <div>
-      HHHHHZH
-    </div>
+    <ThemeProvider theme={theme}>
+      {routing}
+    </ThemeProvider>
   );
 }
 
